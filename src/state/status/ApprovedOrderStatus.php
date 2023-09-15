@@ -1,11 +1,13 @@
 <?php
-namespace src\state;
+namespace src\state\status;
 
-class ApprovedStatus extends Status
+use src\state\Order;
+
+class ApprovedOrderStatus extends OrderStatus
 {
-    public function __construct()
+    public function __construct(Order $order)
     {
-        parent::__construct();
+        parent::__construct($order);
         $this->value = 'approved';
     }
 

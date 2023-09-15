@@ -1,11 +1,13 @@
 <?php
-namespace src\state;
+namespace src\state\status;
 
-class DeniedStatus extends Status
+use src\state\Order;
+
+class DeniedOrderStatus extends OrderStatus
 {
-    public function __construct()
+    public function __construct(Order $order)
     {
-        parent::__construct();
+        parent::__construct($order);
         $this->value = 'denied';
     }
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace src\state;
+namespace src\state\status;
 
 use RuntimeException;
 

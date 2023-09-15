@@ -1,17 +1,22 @@
 <?php
 
+namespace unit\state;
+
 use PHPUnit\Framework\TestCase;
-use src\state\InvalidStatusTransition;
-use src\state\Status;
-use src\state\StatusFactory;
+use src\state\Order;
+use src\state\status\InvalidStatusTransition;
+use src\state\status\OrderStatus;
+use src\state\status\StatusFactory;
 
 class DeniedStatusTest extends TestCase
 {
-    private Status $status;
+    private OrderStatus $status;
+
     protected function setUp(): void
     {
         parent::setUp();
-        $this->status = StatusFactory::create('denied');
+        $order = static::createMock(Order::class);
+        $this->status = StatusFactory::create($order, 'denied');
     }
 
     public function testIdempotency()
