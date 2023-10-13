@@ -5,7 +5,7 @@ namespace src\chainOfResponsibility;
 use RuntimeException;
 
 class PixHandler {
-    public function __construct(public ?PixKey $key = null)
+    public function __construct(public PixKey $key)
     {
     }
 
